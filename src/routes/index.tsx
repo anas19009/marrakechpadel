@@ -1,17 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import heroImg from "@/assets/hero-padel.jpg";
+import heroImg from "@/assets/hero-sunrise.jpg";
 import villaSocial from "@/assets/villa-social.jpg";
 import villaLifestyle from "@/assets/villa-lifestyle.jpg";
+import villaSilence from "@/assets/villa-silence.jpg";
+import slowMoment from "@/assets/slow-moment.jpg";
+import desertLife from "@/assets/desert-life.jpg";
+import coach1 from "@/assets/coach-1.jpg";
+import coach2 from "@/assets/coach-2.jpg";
+import coach3 from "@/assets/coach-3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Padel Retreats à Marrakech — Sport, Culture & Bien-être" },
-      { name: "description", content: "Retraites de padel de luxe à Marrakech : coaching certifié, hébergement 5★, gastronomie et expériences culturelles exclusives." },
-      { property: "og:title", content: "Padel Retreats à Marrakech" },
-      { property: "og:description", content: "Sport, culture et bien-être sous le soleil marocain." },
+      { title: "Padel Retreats — Marrakech" },
+      { name: "description", content: "Padel, silence et lumière marocaine. Retraites confidentielles à Marrakech, en petits groupes." },
+      { property: "og:title", content: "Padel Retreats — Marrakech" },
+      { property: "og:description", content: "Padel, silence et lumière marocaine." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/src/assets/hero-sunrise.jpg" },
     ],
   }),
   component: Index,
@@ -23,81 +30,103 @@ const T = {
   fr: {
     nav: "Marrakech",
     book: "Réserver",
-    heroEyebrow: "Là où le jeu rencontre la sérénité marocaine",
-    heroTitle1: "Padel",
-    heroTitle2: "Retreats",
-    heroTitle3: "à Marrakech",
-    heroSub: "Sport, culture et bien-être sous le soleil marocain. Une parenthèse signature pour joueurs exigeants.",
-    discover: "Découvrir les retraites",
-    introEyebrow: "L'expérience",
-    introTitle1: "Une",
-    introTitleItalic: "parenthèse",
-    introTitle2: "de jeu, de soleil et de raffinement.",
-    introBody: "Deux formats signature, pensés pour les amoureux du padel comme pour les esthètes du voyage. Chaque retraite associe heures de coaching, hébergement d'exception et immersion culturelle au cœur de Marrakech.",
-    r1Eyebrow: "Édition UK · 4 jours / 3 nuits",
+    heroEyebrow: "Padel · Marrakech",
+    heroTitle1: "Jouer",
+    heroTitleItalic: "lentement.",
+    heroTitle2: "Vivre intensément.",
+    heroSub: "Une retraite. Quelques joueurs. La lumière du Maroc.",
+    discover: "Découvrir",
+
+    expEyebrow: "L'expérience",
+    expTitle1: "Un",
+    expItalic: "silence",
+    expTitle2: "entre deux échanges.",
+    expBody: "Le padel comme prétexte. Le Maroc comme décor. Tout le reste : pensé pour qu'on l'oublie.",
+
+    rhythmEyebrow: "Le rythme du séjour",
+    rhythmTitle1: "Trois",
+    rhythmItalic: "temps",
+    rhythmTitle2: "par jour.",
+    rhythms: [
+      { k: "Matin", v: "Court au lever du soleil. Coaching, deux heures, sans bruit." },
+      { k: "Après-midi", v: "Hammam, sieste, thé. Le corps se repose." },
+      { k: "Soir", v: "Dîner privé. Médina, désert, ou silence." },
+    ],
+
+    dayEyebrow: "Une journée type",
+    dayTitle1: "Du",
+    dayItalic: "lever",
+    dayTitle2: "au feu de camp.",
+    day: [
+      { h: "07:00", t: "Court — lumière dorée, coaching." },
+      { h: "10:00", t: "Petit-déjeuner sous les oliviers." },
+      { h: "13:00", t: "Déjeuner du chef, repos à la villa." },
+      { h: "16:00", t: "Spa, hammam ou Médina." },
+      { h: "20:00", t: "Dîner — désert ou riad." },
+    ],
+
+    r1Eyebrow: "Édition UK · 4 jours",
     r1Title: "Social",
     r1Italic: "Championship",
-    r1Duration: "Villa Palmeraie privatisée",
-    r1Price: "À partir de 2 000 € / personne (base 12)",
-    r1Inc: "12 h de coaching padel, tournoi Pro-Am avec joueurs professionnels, hébergement 5★, tous repas signés par un chef privé, spa & hammam, excursion quad dans le désert.",
-    r2Eyebrow: "Édition FR · 4 jours / 3 nuits",
+    r1Duration: "Villa privatisée · Palmeraie",
+    r1Price: "Dès 2 000 € / personne",
+    r1Inc: "Coaching anglophone, tournoi Pro-Am, chef privé, hammam, dîner dans le désert.",
+    r2Eyebrow: "Édition FR · 4 jours",
     r2Title: "Art de Vivre",
     r2Italic: "& Performance",
-    r2Duration: "Suites 5★ Fairmont Royal Palm",
-    r2Price: "À partir de 2 300 € / personne (base 12)",
-    r2Inc: "Coaching intensif avec analyse vidéo, 3 h de padel par jour, détente au spa, hammam traditionnel, visites exclusives (Jardin Majorelle, Musée YSL), haute gastronomie.",
-    reserve: "Réserver maintenant",
-    featEyebrow: "Caractéristiques",
-    featTitle1: "Ce qui rend nos retraites",
-    featItalic: "singulières",
-    features: [
-      "Encadrement par coachs certifiés FFT / LTA et parcours adapté à votre niveau",
-      "Hébergement 4–5★ et transports privés inclus",
-      "Expériences culturelles haut de gamme : désert d'Agafay, Médina, gastronomie",
-      "Formule tout-compris : repas, boissons, excursions, photographies professionnelles",
-      "Groupes exclusifs (12 à 16 joueurs) avec suivi personnalisé",
+    r2Duration: "Suites 5★ · Fairmont Royal Palm",
+    r2Price: "Dès 2 300 € / personne",
+    r2Inc: "Coaching francophone, analyse vidéo, gastronomie, Jardin Majorelle, Musée YSL.",
+    reserve: "Réserver",
+
+    trustEyebrow: "L'équipe",
+    trustTitle1: "Des",
+    trustItalic: "visages",
+    trustTitle2: "que vous reconnaîtrez.",
+    trustBody: "Coachs certifiés FFT et LTA, partenaires de clubs en France et au Royaume-Uni. Groupes limités à 12 joueurs.",
+    coaches: [
+      { name: "Antoine", role: "Coach FFT · Paris" },
+      { name: "Sofia", role: "Coach LTA · Londres" },
+      { name: "Mehdi", role: "Coach résident · Marrakech" },
     ],
-    tableEyebrow: "Comparatif",
-    tableTitle1: "Prestations",
-    tableItalic: "incluses",
-    tableHead: ["Prestations", "Social Championship", "Art de Vivre & Perf."],
-    tableRows: [
-      ["Coaching padel", "12 h — coachs anglophones + tournoi", "12 h — coachs francophones certifiés"],
-      ["Hébergement", "Villa de luxe privatisée", "Suites Fairmont Royal Palm"],
-      ["Restauration", "Chef privé & tous repas", "Restaurants 5★ & déjeuners gastronomiques"],
-      ["Bien-être", "Spa villa, hammam", "Spa signature, hammam traditionnel"],
-      ["Transferts", "Chauffeur privé & voiture 24 h", "Transferts aéroport & excursions privées"],
-      ["Activités", "Dîner dans le désert, photographe drone", "Excursions culturelles, coach vidéo individuel"],
+    partnersLabel: "Clubs partenaires",
+    partners: ["All In Padel — Paris", "Padel4all — Londres", "Royal Padel Club — Marrakech", "La Cala — Lyon"],
+    limited: "Groupes limités · 12 joueurs maximum",
+
+    priceEyebrow: "Options d'accès",
+    priceTitle1: "Trois manières",
+    priceItalic: "d'entrer",
+    priceTitle2: "dans la retraite.",
+    accessOptions: [
+      { tag: "Individuel", price: "Dès 1 800 €", desc: "Une place dans la prochaine retraite ouverte." },
+      { tag: "Duo", price: "Dès 3 400 €", desc: "Deux joueurs, même chambre, même court." },
+      { tag: "Privatisation", price: "Sur devis", desc: "Votre groupe, votre villa, vos dates." },
     ],
-    priceEyebrow: "Tarifs & réservation",
-    priceTitle1: "À partir de",
-    priceItalic: "1 800 €",
-    priceTitle2: "par personne",
-    priceBody: "Prix variable selon date et options. Contactez-nous pour un devis personnalisé.",
-    contact: "Contactez-nous",
-    formEyebrow: "B2B",
-    formTitle1: "Demande de",
-    formItalic: "réservation",
-    formIntro: "Pour les clubs, comités d'entreprise et conciergeries : écrivez-nous ou remplissez le formulaire ci-dessous.",
+    contact: "Demander une place",
+
+    formEyebrow: "Réservation",
+    formTitle1: "Écrivez-nous",
+    formItalic: "directement.",
+    formIntro: "Nous répondons sous 24 h.",
     fName: "Nom",
     fEmail: "Courriel",
     fPhone: "Téléphone",
     fCountry: "Pays",
     fCountryPh: "Sélectionnez votre pays",
-    fOffer: "Type d'offre",
-    fOfferPh: "Sélectionnez une offre",
+    fOffer: "Type d'accès",
+    fOfferPh: "Sélectionnez une option",
     offers: [
-      { v: "social", l: "Social Championship (UK)" },
-      { v: "lifestyle", l: "Art de Vivre & Performance (FR)" },
-      { v: "custom", l: "Offre sur mesure" },
-      { v: "b2b", l: "Groupe / B2B" },
+      { v: "individual", l: "Place individuelle" },
+      { v: "duo", l: "Duo" },
+      { v: "private", l: "Privatisation" },
+      { v: "b2b", l: "Club / B2B" },
     ],
-    fLevel: "Niveau padel (FFT / LTA / Playtomic)",
-    fLevelPh: "Classement ou niveau de jeu",
-    fGdpr: "J'accepte que mes données soient utilisées pour la gestion de ma demande (RGPD).",
+    fLevel: "Niveau padel",
+    fLevelPh: "Classement ou niveau",
+    fGdpr: "J'accepte que mes données soient utilisées pour ma demande (RGPD).",
     send: "Envoyer",
     footerRights: "Tous droits réservés.",
-    privacy: "Politique de confidentialité",
+    privacy: "Confidentialité",
     legal: "Mentions légales",
     waLabel: "WhatsApp",
     waMsg: "Bonjour, je souhaite en savoir plus sur vos retraites de padel à Marrakech.",
@@ -105,82 +134,104 @@ const T = {
   en: {
     nav: "Marrakech",
     book: "Book",
-    heroEyebrow: "Where spirited play meets moroccan calm",
-    heroTitle1: "Padel",
-    heroTitle2: "Retreats",
-    heroTitle3: "in Marrakech",
-    heroSub: "Sport, culture and wellness under the Moroccan sun. A signature escape for discerning players.",
-    discover: "Discover the retreats",
-    introEyebrow: "The experience",
-    introTitle1: "An",
-    introTitleItalic: "interlude",
-    introTitle2: "of play, sun and refinement.",
-    introBody: "Two signature formats, crafted for padel lovers and travel aesthetes alike. Each retreat blends coaching hours, exceptional stays and cultural immersion in the heart of Marrakech.",
-    r1Eyebrow: "UK Edition · 4 days / 3 nights",
+    heroEyebrow: "Padel · Marrakech",
+    heroTitle1: "Play",
+    heroTitleItalic: "slowly.",
+    heroTitle2: "Live fully.",
+    heroSub: "One retreat. A few players. The light of Morocco.",
+    discover: "Discover",
+
+    expEyebrow: "The experience",
+    expTitle1: "A",
+    expItalic: "silence",
+    expTitle2: "between two rallies.",
+    expBody: "Padel as the pretext. Morocco as the setting. Everything else: designed to be forgotten.",
+
+    rhythmEyebrow: "The rhythm of the stay",
+    rhythmTitle1: "Three",
+    rhythmItalic: "moments",
+    rhythmTitle2: "a day.",
+    rhythms: [
+      { k: "Morning", v: "Court at sunrise. Coaching, two hours, no noise." },
+      { k: "Afternoon", v: "Hammam, nap, mint tea. The body rests." },
+      { k: "Evening", v: "Private dinner. Medina, desert, or silence." },
+    ],
+
+    dayEyebrow: "A typical day",
+    dayTitle1: "From",
+    dayItalic: "sunrise",
+    dayTitle2: "to the fire.",
+    day: [
+      { h: "07:00", t: "Court — golden light, coaching." },
+      { h: "10:00", t: "Breakfast under the olive trees." },
+      { h: "13:00", t: "Chef's lunch, rest at the villa." },
+      { h: "16:00", t: "Spa, hammam or Medina." },
+      { h: "20:00", t: "Dinner — desert or riad." },
+    ],
+
+    r1Eyebrow: "UK Edition · 4 days",
     r1Title: "Social",
     r1Italic: "Championship",
-    r1Duration: "Private Palmeraie villa",
-    r1Price: "From €2,000 / person (base 12)",
-    r1Inc: "12 h of padel coaching, Pro-Am tournament with professional players, 5★ stay, all meals by a private chef, spa & hammam, desert quad excursion.",
-    r2Eyebrow: "FR Edition · 4 days / 3 nights",
+    r1Duration: "Private villa · Palmeraie",
+    r1Price: "From €2,000 / person",
+    r1Inc: "English-speaking coaching, Pro-Am tournament, private chef, hammam, desert dinner.",
+    r2Eyebrow: "FR Edition · 4 days",
     r2Title: "Art of Living",
     r2Italic: "& Performance",
-    r2Duration: "5★ Suites at Fairmont Royal Palm",
-    r2Price: "From €2,300 / person (base 12)",
-    r2Inc: "Intensive coaching with video analysis, 3 h padel daily, spa relaxation, traditional hammam, exclusive visits (Jardin Majorelle, YSL Museum), fine dining.",
-    reserve: "Book now",
-    featEyebrow: "Highlights",
-    featTitle1: "What makes our retreats",
-    featItalic: "singular",
-    features: [
-      "FFT / LTA certified coaching, programme tailored to your level",
-      "4–5★ accommodation and private transfers included",
-      "High-end cultural experiences: Agafay desert, Medina, gastronomy",
-      "All-inclusive: meals, drinks, excursions, professional photography",
-      "Exclusive groups (12 to 16 players) with personalised follow-up",
+    r2Duration: "5★ Suites · Fairmont Royal Palm",
+    r2Price: "From €2,300 / person",
+    r2Inc: "French-speaking coaching, video analysis, fine dining, Majorelle Garden, YSL Museum.",
+    reserve: "Book",
+
+    trustEyebrow: "The team",
+    trustTitle1: "Faces",
+    trustItalic: "you'll",
+    trustTitle2: "recognise.",
+    trustBody: "FFT and LTA certified coaches. Partner clubs in France and the United Kingdom. Groups limited to 12 players.",
+    coaches: [
+      { name: "Antoine", role: "FFT Coach · Paris" },
+      { name: "Sofia", role: "LTA Coach · London" },
+      { name: "Mehdi", role: "Resident coach · Marrakech" },
     ],
-    tableEyebrow: "Comparison",
-    tableTitle1: "What's",
-    tableItalic: "included",
-    tableHead: ["Services", "Social Championship", "Art of Living & Perf."],
-    tableRows: [
-      ["Padel coaching", "12 h — English-speaking coaches + tournament", "12 h — certified French-speaking coaches"],
-      ["Accommodation", "Private luxury villa", "Fairmont Royal Palm suites"],
-      ["Dining", "Private chef & all meals", "5★ restaurants & gourmet lunches"],
-      ["Wellness", "Villa spa, hammam", "Signature spa, traditional hammam"],
-      ["Transfers", "24 h private driver & car", "Airport transfers & private excursions"],
-      ["Activities", "Desert dinner, drone photographer", "Cultural excursions, personal video coach"],
+    partnersLabel: "Partner clubs",
+    partners: ["All In Padel — Paris", "Padel4all — London", "Royal Padel Club — Marrakech", "La Cala — Lyon"],
+    limited: "Limited groups · 12 players maximum",
+
+    priceEyebrow: "Access options",
+    priceTitle1: "Three ways",
+    priceItalic: "to enter",
+    priceTitle2: "the retreat.",
+    accessOptions: [
+      { tag: "Single", price: "From €1,800", desc: "One seat in the next open retreat." },
+      { tag: "Duo", price: "From €3,400", desc: "Two players, same room, same court." },
+      { tag: "Private", price: "On request", desc: "Your group, your villa, your dates." },
     ],
-    priceEyebrow: "Pricing & booking",
-    priceTitle1: "From",
-    priceItalic: "€1,800",
-    priceTitle2: "per person",
-    priceBody: "Price varies by date and options. Contact us for a personalised quote.",
-    contact: "Contact us",
-    formEyebrow: "B2B",
-    formTitle1: "Booking",
-    formItalic: "enquiry",
-    formIntro: "For clubs, corporate teams and concierges: write to us or fill in the form below.",
+    contact: "Request a seat",
+
+    formEyebrow: "Booking",
+    formTitle1: "Write to us",
+    formItalic: "directly.",
+    formIntro: "We reply within 24 h.",
     fName: "Name",
     fEmail: "Email",
     fPhone: "Phone",
     fCountry: "Country",
     fCountryPh: "Select your country",
-    fOffer: "Offer type",
-    fOfferPh: "Select an offer",
+    fOffer: "Access type",
+    fOfferPh: "Select an option",
     offers: [
-      { v: "social", l: "Social Championship (UK)" },
-      { v: "lifestyle", l: "Art of Living & Performance (FR)" },
-      { v: "custom", l: "Bespoke offer" },
-      { v: "b2b", l: "Group / B2B" },
+      { v: "individual", l: "Single seat" },
+      { v: "duo", l: "Duo" },
+      { v: "private", l: "Private retreat" },
+      { v: "b2b", l: "Club / B2B" },
     ],
-    fLevel: "Padel level (FFT / LTA / Playtomic)",
-    fLevelPh: "Ranking or playing level",
+    fLevel: "Padel level",
+    fLevelPh: "Ranking or level",
     fGdpr: "I agree my data may be used to handle my request (GDPR).",
     send: "Send",
     footerRights: "All rights reserved.",
-    privacy: "Privacy policy",
-    legal: "Legal notice",
+    privacy: "Privacy",
+    legal: "Legal",
     waLabel: "WhatsApp",
     waMsg: "Hello, I'd like to know more about your padel retreats in Marrakech.",
   },
@@ -192,7 +243,7 @@ function LangToggle({ lang, setLang, tone = "light" }: { lang: Lang; setLang: (l
   const base = tone === "light" ? "text-primary-foreground/80 border-primary-foreground/30" : "text-foreground/70 border-border";
   const active = tone === "light" ? "text-primary-foreground border-primary-foreground" : "text-burgundy border-burgundy";
   return (
-    <div className={`flex items-center gap-1 eyebrow text-[0.65rem]`}>
+    <div className="flex items-center gap-1 eyebrow text-[0.65rem]">
       <button onClick={() => setLang("fr")} className={`px-2 py-1 border-b ${lang === "fr" ? active : base} transition-colors`}>FR</button>
       <span className={tone === "light" ? "text-primary-foreground/40" : "text-border"}>/</span>
       <button onClick={() => setLang("en")} className={`px-2 py-1 border-b ${lang === "en" ? active : base} transition-colors`}>EN</button>
@@ -211,7 +262,7 @@ function Nav({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
       <div className="text-center font-display text-xl md:text-2xl tracking-wide">
         Padel <span className="italic">Retreats</span>
       </div>
-      <a href="#book" className="hidden md:inline-block bg-burgundy hover:bg-burgundy-dark transition-colors px-6 py-3 text-primary-foreground eyebrow">
+      <a href="#book" className="hidden md:inline-block border border-primary-foreground/60 hover:bg-primary-foreground hover:text-ink transition-colors px-5 py-2.5 text-primary-foreground eyebrow text-[0.7rem]">
         {t.book}
       </a>
     </nav>
@@ -268,103 +319,159 @@ function Retreat({ eyebrow, title, italic, duration, price, includes, img, rever
 function Index() {
   const [lang, setLang] = useState<Lang>("fr");
   const t = T[lang];
+  const coachImgs = [coach1, coach2, coach3];
 
   return (
     <div className="bg-background text-foreground">
+      {/* HERO — minimal, emotional */}
       <header className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
-        <img src={heroImg} alt="Padel" width={1920} height={1280} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+        <img src={heroImg} alt="Padel court at sunrise in Marrakech" width={1920} height={1280} className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/15 to-black/70" />
         <Nav lang={lang} setLang={setLang} />
-        <div className="relative z-10 flex h-full items-center justify-center px-6">
-          <div className="text-center text-primary-foreground max-w-3xl">
-            <p className="eyebrow mb-6 text-primary-foreground/90">{t.heroEyebrow}</p>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
-              <span className="italic">{t.heroTitle1}</span> {t.heroTitle2}<br />{t.heroTitle3}
+        <div className="relative z-10 flex h-full items-end md:items-center justify-center md:justify-start px-6 md:px-16 pb-20 md:pb-0">
+          <div className="text-primary-foreground max-w-xl">
+            <p className="eyebrow mb-6 text-primary-foreground/80">{t.heroEyebrow}</p>
+            <h1 className="font-display text-5xl md:text-7xl leading-[0.95]">
+              {t.heroTitle1} <span className="italic">{t.heroTitleItalic}</span><br />{t.heroTitle2}
             </h1>
-            <p className="mt-8 font-light text-base md:text-lg text-primary-foreground/90 max-w-xl mx-auto">{t.heroSub}</p>
-            <a href="#retreats" className="inline-block mt-10 border border-primary-foreground/80 hover:bg-primary-foreground hover:text-ink transition-colors px-8 py-4 eyebrow">
-              {t.discover}
+            <p className="mt-8 font-light text-base md:text-lg text-primary-foreground/85 max-w-md">{t.heroSub}</p>
+            <a href="#experience" className="inline-block mt-10 border-b border-primary-foreground/80 pb-1 eyebrow hover:text-primary-foreground/70 transition-colors">
+              {t.discover} →
             </a>
           </div>
         </div>
       </header>
 
-      <section className="py-24 md:py-32 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <p className="eyebrow text-burgundy">{t.introEyebrow}</p>
+      {/* THE EXPERIENCE */}
+      <section id="experience" className="py-28 md:py-40 px-6">
+        <div className="max-w-xl mx-auto text-center">
+          <p className="eyebrow text-burgundy">{t.expEyebrow}</p>
           <h2 className="mt-6 font-display text-4xl md:text-5xl leading-tight">
-            {t.introTitle1} <span className="italic">{t.introTitleItalic}</span> {t.introTitle2}
+            {t.expTitle1} <span className="italic">{t.expItalic}</span> {t.expTitle2}
           </h2>
-          <p className="mt-8 text-foreground/75 leading-relaxed">{t.introBody}</p>
+          <p className="mt-8 text-foreground/70 leading-relaxed">{t.expBody}</p>
+        </div>
+        <div className="mt-20 max-w-5xl mx-auto">
+          <img src={villaSilence} alt="" width={1600} height={1100} loading="lazy" className="w-full h-[400px] md:h-[600px] object-cover" />
         </div>
       </section>
 
-      <section id="retreats" className="px-6 md:px-12 pb-24 md:pb-32 space-y-24 md:space-y-32 max-w-7xl mx-auto">
+      {/* RHYTHM OF THE STAY */}
+      <section className="bg-secondary py-28 md:py-36 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="overflow-hidden">
+            <img src={slowMoment} alt="" width={1600} height={1100} loading="lazy" className="w-full h-[420px] md:h-[560px] object-cover" />
+          </div>
+          <div>
+            <p className="eyebrow text-burgundy">{t.rhythmEyebrow}</p>
+            <h2 className="mt-6 font-display text-4xl md:text-5xl leading-tight">
+              {t.rhythmTitle1} <span className="italic">{t.rhythmItalic}</span> {t.rhythmTitle2}
+            </h2>
+            <ul className="mt-10 divide-y divide-border/60">
+              {t.rhythms.map((r) => (
+                <li key={r.k} className="py-6">
+                  <p className="font-display italic text-2xl text-burgundy">{r.k}</p>
+                  <p className="mt-2 text-foreground/75 leading-relaxed">{r.v}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* A TYPICAL DAY */}
+      <section className="py-28 md:py-36 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="eyebrow text-burgundy">{t.dayEyebrow}</p>
+            <h2 className="mt-6 font-display text-4xl md:text-5xl leading-tight">
+              {t.dayTitle1} <span className="italic">{t.dayItalic}</span> {t.dayTitle2}
+            </h2>
+            <ol className="mt-10 space-y-5">
+              {t.day.map((d) => (
+                <li key={d.h} className="grid grid-cols-[5rem_1fr] gap-4 items-baseline border-b border-border/40 pb-4">
+                  <span className="font-display italic text-xl text-burgundy">{d.h}</span>
+                  <span className="text-foreground/80">{d.t}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="overflow-hidden md:order-first">
+            <img src={desertLife} alt="" width={1600} height={1100} loading="lazy" className="w-full h-[420px] md:h-[600px] object-cover" />
+          </div>
+        </div>
+      </section>
+
+      {/* RETREATS */}
+      <section id="retreats" className="px-6 md:px-12 py-24 md:py-32 space-y-24 md:space-y-32 max-w-7xl mx-auto">
         <Retreat eyebrow={t.r1Eyebrow} title={t.r1Title} italic={t.r1Italic} duration={t.r1Duration} price={t.r1Price} includes={t.r1Inc} img={villaSocial} cta={t.reserve} />
         <Retreat eyebrow={t.r2Eyebrow} title={t.r2Title} italic={t.r2Italic} duration={t.r2Duration} price={t.r2Price} includes={t.r2Inc} img={villaLifestyle} cta={t.reserve} reverse />
       </section>
 
-      <section className="bg-secondary py-24 md:py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="eyebrow text-burgundy">{t.featEyebrow}</p>
-          <h2 className="mt-6 font-display text-4xl md:text-5xl">
-            {t.featTitle1} <span className="italic">{t.featItalic}</span>
+      {/* TRUST LAYER */}
+      <section className="bg-secondary py-28 md:py-36 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="eyebrow text-burgundy">{t.trustEyebrow}</p>
+          <h2 className="mt-6 font-display text-4xl md:text-5xl leading-tight">
+            {t.trustTitle1} <span className="italic">{t.trustItalic}</span> {t.trustTitle2}
+          </h2>
+          <p className="mt-6 text-foreground/70 leading-relaxed">{t.trustBody}</p>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
+          {t.coaches.map((c, i) => (
+            <div key={c.name} className="text-center">
+              <div className="overflow-hidden rounded-full w-40 h-40 mx-auto">
+                <img src={coachImgs[i]} alt={c.name} width={400} height={400} loading="lazy" className="w-full h-full object-cover" />
+              </div>
+              <p className="mt-5 font-display text-2xl">{c.name}</p>
+              <p className="mt-1 eyebrow text-muted-foreground">{c.role}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-20 max-w-4xl mx-auto text-center">
+          <p className="eyebrow text-muted-foreground">{t.partnersLabel}</p>
+          <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-foreground/70">
+            {t.partners.map((p) => (
+              <li key={p} className="font-display italic text-lg">{p}</li>
+            ))}
+          </ul>
+          <p className="mt-12 inline-block border border-burgundy text-burgundy px-5 py-2 eyebrow text-[0.7rem]">{t.limited}</p>
+        </div>
+      </section>
+
+      {/* ACCESS OPTIONS (was pricing) */}
+      <section className="bg-burgundy text-primary-foreground py-28 md:py-36 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="eyebrow text-primary-foreground/70">{t.priceEyebrow}</p>
+          <h2 className="mt-6 font-display text-4xl md:text-5xl leading-tight">
+            {t.priceTitle1} <span className="italic">{t.priceItalic}</span> {t.priceTitle2}
           </h2>
         </div>
-        <ul className="mt-16 max-w-3xl mx-auto divide-y divide-border">
-          {t.features.map((f) => (
-            <li key={f} className="flex items-start gap-6 py-6">
-              <span className="font-display italic text-2xl text-burgundy leading-none mt-1">✦</span>
-              <span className="text-foreground/80 leading-relaxed">{f}</span>
-            </li>
+        <div className="mt-16 grid md:grid-cols-3 gap-px bg-primary-foreground/15 max-w-5xl mx-auto">
+          {t.accessOptions.map((o) => (
+            <div key={o.tag} className="bg-burgundy p-10 text-center">
+              <p className="eyebrow text-primary-foreground/70">{o.tag}</p>
+              <p className="mt-6 font-display italic text-3xl">{o.price}</p>
+              <p className="mt-6 text-primary-foreground/80 leading-relaxed text-sm">{o.desc}</p>
+            </div>
           ))}
-        </ul>
-      </section>
-
-      <section className="py-24 md:py-32 px-6 max-w-6xl mx-auto">
-        <div className="text-center">
-          <p className="eyebrow text-burgundy">{t.tableEyebrow}</p>
-          <h2 className="mt-6 font-display text-4xl md:text-5xl">{t.tableTitle1} <span className="italic">{t.tableItalic}</span></h2>
         </div>
-        <div className="mt-14 overflow-x-auto">
-          <table className="w-full border-collapse text-left">
-            <thead>
-              <tr className="border-y border-border">
-                <th className="py-5 pr-4 eyebrow text-muted-foreground font-normal">{t.tableHead[0]}</th>
-                <th className="py-5 px-4 font-display italic text-xl text-burgundy">{t.tableHead[1]}</th>
-                <th className="py-5 px-4 font-display italic text-xl text-burgundy">{t.tableHead[2]}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {t.tableRows.map(([a, b, c]) => (
-                <tr key={a} className="border-b border-border/60 align-top">
-                  <td className="py-5 pr-4 font-medium">{a}</td>
-                  <td className="py-5 px-4 text-foreground/75">{b}</td>
-                  <td className="py-5 px-4 text-foreground/75">{c}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="text-center mt-14">
+          <a href="#book" className="inline-block bg-primary-foreground text-burgundy hover:bg-primary-foreground/90 transition-colors px-10 py-4 eyebrow">
+            {t.contact}
+          </a>
         </div>
       </section>
 
-      <section className="bg-burgundy text-primary-foreground py-24 md:py-32 px-6 text-center">
-        <p className="eyebrow text-primary-foreground/80">{t.priceEyebrow}</p>
-        <h2 className="mt-6 font-display text-4xl md:text-6xl">
-          {t.priceTitle1} <span className="italic">{t.priceItalic}</span><br />{t.priceTitle2}
-        </h2>
-        <p className="mt-6 max-w-xl mx-auto text-primary-foreground/85">{t.priceBody}</p>
-        <a href="mailto:contact@padelretreat.com" className="inline-block mt-10 bg-primary-foreground text-burgundy hover:bg-primary-foreground/90 transition-colors px-10 py-4 eyebrow">
-          {t.contact}
-        </a>
-      </section>
-
-      <section id="book" className="py-24 md:py-32 px-6">
+      {/* BOOKING */}
+      <section id="book" className="py-28 md:py-36 px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center">
             <p className="eyebrow text-burgundy">{t.formEyebrow}</p>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl">{t.formTitle1} <span className="italic">{t.formItalic}</span></h2>
-            <p className="mt-6 text-foreground/75">{t.formIntro}</p>
+            <h2 className="mt-6 font-display text-4xl md:text-5xl leading-tight">{t.formTitle1} <span className="italic">{t.formItalic}</span></h2>
+            <p className="mt-6 text-foreground/70">{t.formIntro}</p>
           </div>
 
           <form className="mt-14 grid gap-6" method="post">
